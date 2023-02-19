@@ -1,5 +1,5 @@
 import './index.css'
-const regex = /\>(.*?)Source: \[(.*?)]\((.*?)\)(.*?)(\r\n|\n|,|$)/s;
+const regex = /^\>(.*?)Source: \[(.*?)]\((.*?)\)(.*?)(\r\n|\n|,|$)/s;
 
 interface QuoteBackToken {
   type: "quoteBack"; // Should match "name" above
