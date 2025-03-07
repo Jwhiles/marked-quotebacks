@@ -1,20 +1,28 @@
 {
   "name": "marked-quotebacks",
-  "version": "1.0.0",
+  "version": "1.1.6",
   "description": "A marked extension that is used to render quotebacks",
   "source": "src/index.ts",
-  "main": "dist/main.js",
-  "types": "dist/types.d.ts",
+  "type": "module",
+  "main": "dist/marked-quotebacks.cjs.js",
+  "module": "dist/marked-quotebacks.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/marked-quotebacks.es.js",
+      "require": "./dist/marked-quotebacks.cjs.js"
+    },
+    "./styles": "dist/marked-quotebacks.css"
+  },
   "scripts": {
-    "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "vite build"
   },
   "author": "John Whiles",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/packager-ts": "^2.8.3",
-    "@parcel/transformer-typescript-types": "^2.8.3",
-    "parcel": "^2.8.3",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vite": "^6.2.1",
+    "vite-plugin-dts": "^4.5.3"
   }
 }
